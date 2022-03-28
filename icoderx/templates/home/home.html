@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}icoder
+{% endblock title %}
+{% block style %}
+<style>
+    .card1{
+        margin: 18px;
+        padding: 10px;
+        border: 2px solid black;
+        box-sizing: border-box;
+
+    }
+    
+</style>
+
+{% endblock style %}
+
+
+{% block activehome %}active{% endblock activehome %}
+{% block body %}
+
+{% for post in allpost %}
+
+<div class="container">
+    <div class="card1">
+        <strong>{{post.subject}}</strong>
+        <h3>{{post.title}}</h3>
+        <p>{{post.content | truncatechars:100}}</p>
+        <div>  <a href="{{post.slug}}" role="button" class="btn btn-success">Continue reading</a></div>
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+
+
+
+
+
+{% endblock body %}
